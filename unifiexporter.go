@@ -99,6 +99,7 @@ func (e *Exporter) initClient() error {
 	}
 
 	e.collectors = []collector{
+		NewAlarmCollector(c, e.sites),
 		NewDeviceCollector(c, e.sites),
 		NewStationCollector(c, e.sites),
 	}
